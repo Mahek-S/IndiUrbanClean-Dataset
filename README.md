@@ -21,7 +21,7 @@ The dataset includes the following categories:
 Each image in the dataset belongs to one of these classes.
 
 ## Folder Structure
-
+'''
 IndiUrbanClean Dataset
 │
 ├── images/
@@ -32,14 +32,15 @@ IndiUrbanClean Dataset
 │   └── overfilled_bins/
 │
 ├── annotations/
+|   └── labels.csv
 │
 ├── metadata/
 │   └── image_metadata.csv
 │
 ├── splits/
-│   ├── train/
-│   ├── val/
-│   └── test/
+│   ├── train.csv
+│   ├── test.csv
+│   └── val.csv
 │
 ├── docs/
 |    ├── dataset_collection.md
@@ -47,7 +48,7 @@ IndiUrbanClean Dataset
 │
 ├── README.md
 └── LICENSE
-
+'''
 ## Metadata
 
 Metadata for the images is available in **metadata/image_metadata.csv**.
