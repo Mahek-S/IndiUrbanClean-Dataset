@@ -35,6 +35,7 @@ The goal is not just to achieve high accuracy, but to understand how models lear
 Images collected from Google Images, Bing, Flickr, Wikimedia Commons, Unsplash, and Pexels.
 
 ### Folder Structure
+```
 IndiUrbanClean/
 ├── images/
 │   ├── clean_street/
@@ -58,7 +59,7 @@ IndiUrbanClean/
 ├── coatnet_hybrid_dlcv.ipynb
 ├── TransferLearning_Part3.ipynb
 └── LICENSE
-
+```
 ---
 
 ## Phase 2: Experiments
