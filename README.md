@@ -109,6 +109,7 @@ Four freezing strategies were compared on ResNet-18 with 5 epochs and an Adam op
 | Freeze Early | Layer3, Layer4, Head | 0.9957 | 0.9495 | 0.9233 | 0.0462 |
 | Freeze Late | Layer1, Layer2, Head | 0.9393 | 0.8990 | 0.8567 | 0.0403 |
 | Train All | All layers | 0.9949 | 0.9562 | 0.9300 | 0.0387 |
+---
 
 Train All (93.0%) performs best with a low learning rate on a lightweight backbone. Freeze Early (92.3%) is nearly as strong and the safer choice. Freeze Late consistently underperforms by disrupting low-level transferable features.
 ---
