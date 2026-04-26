@@ -27,7 +27,7 @@ The goal is not just to achieve high accuracy, but to understand how models lear
 | `overfilled_bins` | Bins at or over capacity where the bin boundary is the key visual cue |
 
 ### Statistics
-- Train/Val/Test split: 80/20 with stratified sampling
+- Train/Validation/Test split: 70/15/15 with stratified sampling to ensure balanced class distribution across all splits.
 - Input size: 224×224
 - All images manually reviewed for class consistency
 
