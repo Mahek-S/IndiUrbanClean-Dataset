@@ -7,7 +7,7 @@ def get_transforms(strategy):
     ]
 
     if strategy == "rotation":
-        aug = [transforms.RandomRotation(30)]
+        aug = [transforms.RandomRotation(90)]
         return transforms.Compose(aug + base)
 
     elif strategy == "crop":
@@ -15,7 +15,7 @@ def get_transforms(strategy):
         return transforms.Compose(aug + base)
 
     elif strategy == "color":
-        aug = [transforms.ColorJitter(brightness=0.5, contrast=0.5)]
+        aug = [transforms.ColorJitter(brightness=0.8, contrast=0.5, saturation=0.3)]
         return transforms.Compose(aug + base)
 
     elif strategy == "cutout":
