@@ -11,8 +11,9 @@ from train import train_model
 from evaluate import evaluate_model
 from corruption import corrupt_pil
 
-DATA_ROOT = "../images"
-SPLITS = "../splits"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_ROOT = os.path.join(BASE_DIR, "images")
+SPLITS = os.path.join(BASE_DIR, "splits")
 
 strategies = ["none", "rotation", "crop", "color", "cutout"]
 corruptions = ["clean", "blur", "dark", "rotate", "noise"]
