@@ -5,7 +5,6 @@ import os
 
 class UrbanDataset(Dataset):
     def __init__(self, csv_file, root_dir, transform=None):
-        self.data = pd.read_csv(csv_file)
         self.root_dir = root_dir
         self.transform = transform
 
@@ -16,6 +15,20 @@ class UrbanDataset(Dataset):
             "dumpyard": 3,
             "overfilled_bins": 4
         }
+
+        all_data = pd.read_csv(csv_file)
+
+        # skip rows where the image file doesn't exist on disk
+        mask = all_data.apply(
+            lambda row: os.path.exists(
+                os.path.join(root_dir, row['label'], row['filename'])
+            ), axis=1
+        )
+        skipped = (~mask).sum()
+        if skipped > 0:
+            print(f"[dataset] Skipping {skipped} missing files from {csv_file}")
+
+        self.data = all_data[mask].reset_index(drop=True)
 
     def __len__(self):
         return len(self.data)
@@ -29,4 +42,4 @@ class UrbanDataset(Dataset):
         if self.transform:
             image = self.transform(image)
 
-        return image, label, img_path  
+        return image, label, img_path
